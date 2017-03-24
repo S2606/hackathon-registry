@@ -1,0 +1,36 @@
+<div class="jumbotron text-center">
+    <h1>All Hackathon Events</h1>
+</div>
+
+<% if (success.length > 0) { %>
+<div class="alert alert-success"><%= success %></div>
+<% } %>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>Event Name</th>
+            <th>Event Description</th>
+            <th>Event Place</th>
+            <th>Event Date</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+        <% for (var event of events) { %>
+            <tr>
+                <td><%= event.name %></td>
+                <td><%= event.description %></td>
+                <td><%= event.place %></td>
+                <td><%= event.date %></td>
+                <td>
+                    <a href="/events/<%= event.name %>" class="btn btn-sm btn-primary">View</a>
+                    <a href="/events/<%= event.name %>/edit" class="btn btn-sm btn-primary">Edit</a>
+                    <a href="/events/<%= event.name %>/delete" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+            </tr>
+        <% } %>
+
+    </tbody>
+</table>
