@@ -14,6 +14,8 @@ const express = require('express'),
   db=require('./db');
 
 
+// tell express where to look for static assets
+app.use(express.static(__dirname + '/public'));
 
 // configure our application
 //session and cookie
@@ -26,8 +28,7 @@ app.use(session({
 }));
 app.use(flash());
 
-// tell express where to look for static assets
-app.use(express.static(__dirname + '/public'));
+
 
 
 // set ejs as our templating engine
@@ -43,8 +44,6 @@ app.use(require('./app/routes'));
 
 //connect to database
 mongoose.connect(db.url);
-
-
 
 // start our server
 app.listen(process.env.PORT || 8000, function(){
