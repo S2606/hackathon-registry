@@ -4,7 +4,6 @@ require('dotenv').config();
 // grab our dependencies
 const express = require('express'),
   app = express(),
-  port = process.env.PORT || 8000,
   expressLayouts = require('express-ejs-layouts'),
   mongoose = require('mongoose'),
   bodyParser = require('body-parser'),
@@ -48,6 +47,6 @@ mongoose.connect(db.url);
 
 
 // start our server
-app.listen(port, function() {
-    console.log("App is running on port " + port);
+app.listen(process.env.PORT || 8000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
