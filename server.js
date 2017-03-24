@@ -17,6 +17,8 @@ const express = require('express'),
 // tell express where to look for static assets
 app.use(express.static(__dirname + '/public'));
 
+app.set( 'port', ( process.env.PORT || 5000 ));
+
 // configure our application
 //session and cookie
 app.use(cookieParser());
@@ -46,6 +48,6 @@ app.use(require('./app/routes'));
 mongoose.connect(db.url);
 
 // start our server
-app.listen(process.env.PORT || 3000, function(){
-    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+app.listen( app.get( 'port' ), function() {
+    console.log( 'Node server is running on port ' + app.get( 'port' ));
 });
