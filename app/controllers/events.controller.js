@@ -95,7 +95,7 @@ function processCreate(req,res) {
     req.checkBody('Name','Name is Required.').notEmpty();
     req.checkBody('Description','Description is Required.').notEmpty();
     req.checkBody('Place','Place is Required.').notEmpty();
-    req.checkBody('Date','Date is Required.').notEmpty();
+    //req.checkBody('Date','Date is Required.').notEmpty();
     req.checkBody('Url','URL is Required.').notEmpty();
     
     //if there are errors. catch

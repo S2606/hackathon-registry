@@ -47,6 +47,6 @@ mongoose.connect(process.env.DB_URI);
 
 
 // start our server
-app.listen(port, () => {
-  console.log(`App listening on http://localhost:${port}`);
+app.listen(port, function() {
+    console.log("App is running on port " + port);
 });
