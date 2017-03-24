@@ -11,7 +11,8 @@ const express = require('express'),
   session=require('express-session'),
   cookieParser=require('cookie-parser'),
   flash=require('connect-flash'),
-  expressValidator=require('express-validator');
+  expressValidator=require('express-validator'),
+  db=require('./db');
 
 
 
@@ -42,7 +43,7 @@ app.use(expressValidator());
 app.use(require('./app/routes'));
 
 //connect to database
-mongoose.connect(process.env.DB_URI);
+mongoose.connect(db.url);
 
 
 
