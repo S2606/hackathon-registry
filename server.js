@@ -17,7 +17,7 @@ const express = require('express'),
 // tell express where to look for static assets
 app.use(express.static(__dirname + '/public'));
 
-app.set( 'port', ( process.env.PORT || 5000 ));
+app.set( 'port', ( process.env.PORT || 3000 ));
 
 // configure our application
 //session and cookie
