@@ -29,6 +29,8 @@ app.use(session({
 }));
 app.use(flash());
 
+//connect to database
+mongoose.connect(process.env.MONGODB_URI || process.env.MONGOHQ_URL || process.env.MONGOLAB_URI);
 
 
 
@@ -43,8 +45,6 @@ app.use(expressValidator());
 // set the routes
 app.use(require('./app/routes'));
 
-//connect to database
-mongoose.connect(process.env.MONGOLAB_URI);
 
 // start our server
 app.listen( app.get( 'port' ), function() {
