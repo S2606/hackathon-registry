@@ -9,14 +9,14 @@ module.exports = router;
 
 // define routes
 // main routes
-router.get('/', mainController.showHome);
+router.get("/", mainController.showHome);
 
 router.get('/favicon.ico', function(req, res) {
     res.send(204);
 });
 
 // event routes
-router.get('/events',       eventsController.showEvents);
+router.get("/events",       eventsController.showEvents);
 
 // create events
 router.get('/events/create',       eventsController.showCreate);
