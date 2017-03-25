@@ -10,8 +10,7 @@ const express = require('express'),
   session=require('express-session'),
   cookieParser=require('cookie-parser'),
   flash=require('connect-flash'),
-  expressValidator=require('express-validator'),
-  db=require('./db');
+  expressValidator=require('express-validator');
 
 
 // tell express where to look for static assets
@@ -45,7 +44,7 @@ app.use(expressValidator());
 app.use(require('./app/routes'));
 
 //connect to database
-mongoose.connect(db.url);
+mongoose.connect(process.env.MONGOLAB_URI);
 
 // start our server
 app.listen( app.get( 'port' ), function() {
