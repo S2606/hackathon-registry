@@ -31,4 +31,7 @@
   "devDependencies": {
     "babel-cli": "^6.24.0"
   }
+  "engines": {
+    "node": "0.6.14"
+  }
 }
