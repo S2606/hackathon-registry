@@ -22,6 +22,7 @@ app.set( 'port', ( process.env.PORT || 3000 ));
 //session and cookie
 app.use(cookieParser());
 app.use(session({
+    key: "mysite.sid.uid.whatever",
     secret:process.env.SECRET,
     cookie:{maxAge:60000},
     resave:false,
