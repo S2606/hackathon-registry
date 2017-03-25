@@ -17,7 +17,7 @@ var eventschema= new schema({
     },
     place:String,
     date:String,
-    URL:String
+    url:String
 
 });
 
