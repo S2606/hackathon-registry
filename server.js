@@ -20,9 +20,9 @@ app.set( 'port', ( process.env.PORT || 3000 ));
 
 // configure our application
 //session and cookie
-app.use(cookieParser(process.env.SECRET));
+app.use(cookieParser());
 app.use(session({
-    secret:process.env.SECRET,
+    secret:"my-super-secret",
     cookie:{maxAge:60000},
     resave:false,
     saveUninitialized:false //dont save unmodified session
