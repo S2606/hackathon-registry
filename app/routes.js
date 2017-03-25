@@ -11,6 +11,10 @@ module.exports = router;
 // main routes
 router.get('/', mainController.showHome);
 
+router.get('/favicon.ico', function(req, res) {
+    res.send(204);
+});
+
 // event routes
 router.get('/events',       eventsController.showEvents);
 
